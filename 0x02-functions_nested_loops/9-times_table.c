@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * times_table - a function that prints the 9 
+ * times_table - a function that prints the 9
  * Description: it prints it followed by , and 2 spaces
  */
 
@@ -18,11 +18,11 @@ void times_table(void)
 				printf("%d, ", result);
 			else
 			{
-				printf("%2d, ", result);
+				printf("%2d", result);
 				if (j != 9)
 					printf(", ");
 			}
 		}
-		printf('\n');
+		printf("\n");
 	}
 }
