@@ -1,27 +1,29 @@
 #include "main.h"
-
 /**
- * print_binary - print the binary representation of decimal number
- * @n: number of binary
+ * print_bi - print the binary representation of a number recursively
+ * @n: the decimal input
+ * Return: void
  */
-
+void print_bi(unsigned long int n)
+{
+	if (n == 0)
+		return;
+	print_bi(n >> 1);
+	if ((n & 1) == 1)
+		_putchar('1');
+	if ((n & 1) == 0)
+		_putchar('0');
+}
+/**
+ * print_binary - prints out binary
+ * @n: decimal to be converted
+ */
 void print_binary(unsigned long int n)
 {
-	unsigned int j, count = 0;
-	unsigned long int new;
-
-	for (j = 63; j > 0; j--)
-	{
-		new = n >> j;
-
-		if (new & 1)
-		{
-			_putchar('1');
-			count++;
-		}
-		else if (count)
-			_putchar('0');
-	}
-	if (!count)
+	if (n == 0)
 		_putchar('0');
+	else
+	{
+		print_bi(n);
+	}
 }
